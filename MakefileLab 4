@@ -1,0 +1,18 @@
+# Compiler and flags
+CC = gcc
+CFLAGS = -lpthread -Wformat -Wall
+
+# Targets
+all: serv cli
+
+# Server executable
+serv: serv.c
+	$(CC) serv.c $(CFLAGS) -o server
+
+# Client executable
+cli: cli.c
+	$(CC) cli.c $(CFLAGS) -o client
+
+# Clean up build files
+clean:
+	rm -f server client
